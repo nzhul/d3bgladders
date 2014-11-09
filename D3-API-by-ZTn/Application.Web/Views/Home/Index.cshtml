@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Application.Web.Models.HeroViewModel>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -92,46 +93,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
+                            @for (int i = 0; i < Model.Count(); i++)
+                            {
+                                var hero = Model.ElementAt(i);
+                                <tr>
+                                    <td>@hero.ID</td>
+                                    <td>@hero.BattleTag</td>
+                                    <td>@hero.Name</td>
+                                    <td>@hero.ParagonLevel</td>
+                                    <td>@hero.HeroClass</td>
+                                    <td>@hero.Damage</td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>

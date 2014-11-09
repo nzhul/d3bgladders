@@ -13,7 +13,17 @@ namespace Application.Web.Controllers
         //[OutputCache(Duration=60*60)]
         public ActionResult Index()
         {
-            return View();
+            var bestHeroes = this.Data.Heroes.All()
+                .OrderByDescending(x => x.ParagonLevel)
+                .Select(x => new HeroViewModel
+                {
+                    BattleTag = x.ApplicationUser.BattleTag,
+                    Damage = x.Stats.Damage,
+                    HeroClass = x.HeroClass,
+                    Name = x.Name,
+                    ParagonLevel = x.ParagonLevel
+                }).ToList();
+            return View(bestHeroes);
         }
     }
 }
