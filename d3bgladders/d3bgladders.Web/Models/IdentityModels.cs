@@ -21,7 +21,7 @@ namespace d3bgladders.Web.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("d3bgladdersConnection", throwIfV1Schema: false)
         {
         }
 
