@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "d3bgladders.Web", "d3bgladders.Web\d3bgladders.Web.csproj", "{AAFA014F-0937-4B82-9FA2-E295C50BC5CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "d3bgladders.Data", "d3bgladders.Data\d3bgladders.Data.csproj", "{8EAB5F65-80F6-494D-BCA1-9D2034C2403A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "d3bgladders.Models", "d3bgladders.Models\d3bgladders.Models.csproj", "{0757A202-E969-409D-BAF8-36116B864E5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{AAFA014F-0937-4B82-9FA2-E295C50BC5CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAFA014F-0937-4B82-9FA2-E295C50BC5CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAFA014F-0937-4B82-9FA2-E295C50BC5CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EAB5F65-80F6-494D-BCA1-9D2034C2403A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EAB5F65-80F6-494D-BCA1-9D2034C2403A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EAB5F65-80F6-494D-BCA1-9D2034C2403A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EAB5F65-80F6-494D-BCA1-9D2034C2403A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0757A202-E969-409D-BAF8-36116B864E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0757A202-E969-409D-BAF8-36116B864E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0757A202-E969-409D-BAF8-36116B864E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0757A202-E969-409D-BAF8-36116B864E5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
