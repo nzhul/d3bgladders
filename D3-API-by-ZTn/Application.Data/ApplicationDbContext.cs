@@ -17,7 +17,7 @@ namespace Application.Data
         public ApplicationDbContext()
             : base("d3bgladdersConnection", throwIfV1Schema: false)
         {
-            //Database.SetInitializer(new DropCreateDatabaseAlways<ApplicationDbContext>());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<ApplicationDbContext>());z
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
         }
 
