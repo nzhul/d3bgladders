@@ -8,8 +8,36 @@ namespace Application.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            bundles.IgnoreList.Clear(); // Important!
+
+            RegisterScriptBundles(bundles);
+            RegisterStyleBundles(bundles);
+
+            BundleTable.EnableOptimizations = false;
+        }
+
+        private static void RegisterStyleBundles(BundleCollection bundles)
+        {
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+              "~/Content/bootstrap.css",
+              "~/Content/bootstrap.superhero.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/kendo").Include(
+                "~/Content/KendoUI/kendo.common.min.css",
+                "~/Content/KendoUI/kendo.common-bootstrap.min.css",
+                "~/Content/KendoUI/kendo.black.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/custom").Include("~/Content/site.css"));
+        }
+
+        private static void RegisterScriptBundles(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/bundles/kendo").Include("~/Scripts/KendoUI/kendo.all.min.js",
+                "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery")
+            .Include("~/Scripts/KendoUI/jquery.min.js"));
+                //.Include("~/Scripts/jquery-{version}.js")); // Regular jquery that comes by default
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -22,13 +50,6 @@ namespace Application.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/site.css"));
-
-            // Set EnableOptimizations to false for debugging. For more information,
-            // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            BundleTable.EnableOptimizations = true;
         }
     }
 }

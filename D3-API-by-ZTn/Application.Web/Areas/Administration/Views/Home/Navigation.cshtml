@@ -1,0 +1,36 @@
+﻿@using Application.Web.Areas.Administration.Controllers
+@model IEnumerable<Product>
+@{
+    ViewBag.Title = "Navigation";
+}
+
+<h2>Navigation</h2>
+
+@*@(Html.Kendo()
+.Calendar()
+.Name("calendar")
+.Min(DateTime.Now.AddDays(-15))
+.Max(DateTime.Now.AddDays(15)))*@
+
+@* for this to work we need to pass DateTime as Model*@
+@*@(Html
+.Kendo()
+.DateTimePickerFor(m => m)
+.Name("date-picker"))*@
+
+@(Html
+.Kendo()
+.Grid<Product>(Model)
+.Name("grid")
+.Columns(columns => 
+{
+    columns.Bound(product => product.Id);
+    columns.Bound(product => product.Name);
+    columns.Bound(product => product.Price);
+})
+.Sortable()
+.Pageable()
+.Filterable()
+.Groupable())
+
+
