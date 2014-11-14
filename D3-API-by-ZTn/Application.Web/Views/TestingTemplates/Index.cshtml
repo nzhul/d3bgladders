@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Application.Web.Models.HeroViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    @foreach (var hero in Model)
+    {
+        @Html.DisplayFor(heroModel => hero.ParagonLevel)
+    }
+    
+</div>
+

@@ -14,5 +14,9 @@ namespace Application.Web.Models
         public int ParagonLevel { get; set; }
         public HeroClass HeroClass { get; set; }
         public double Damage { get; set; }
+        public double Life { get; set; }
+        public double Toughness { get; set; }
+        public double Healing { get; set; }
+        public bool IsHardcore { get; set; }
     }
 }

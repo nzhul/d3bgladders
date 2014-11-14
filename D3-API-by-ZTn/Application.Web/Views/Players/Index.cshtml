@@ -1,0 +1,27 @@
+﻿<h2>Best Players</h2>
+
+@(Html.Kendo()
+.Grid<Application.Web.Models.CareerSummaryViewModel>()
+.Name("career-grid")
+.Pageable()
+.Sortable()
+.Columns(col =>
+{
+    col.Bound(m => m.UserName).ClientTemplate(
+    "<a href='" + Url.Action("Details", "Players") + "/#= Id #'" + ">#= UserName #</a>");
+    col.Bound(m => m.BattleTag);
+    col.Bound(m => m.PostCount);
+    col.Bound(m => m.MonsterKills);
+    col.Bound(m => m.EliteMonsterKills);
+    col.Bound(m => m.HardcoreMonsterKills);
+    col.Bound(m => m.ParagonLevel);
+    col.Bound(m => m.ParagonLevelSeason);
+    col.Bound(m => m.ParagonLevelSeasonHardcore);
+})
+            .DataSource(data =>
+            {
+                data.Ajax()
+                    .ServerOperation(true)
+                    .Read("ReadAllCareers", "Players")
+                    .PageSize(10);
+            }))

@@ -7,8 +7,6 @@ namespace Application.Models.Careers
 {
     public class CareerProgress
     {
-        public int ID { get; set; }
-
         public bool Act1 { get; set; }
 
         public bool Act2 { get; set; }

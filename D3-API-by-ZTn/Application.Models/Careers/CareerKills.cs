@@ -7,7 +7,6 @@ namespace Application.Models.Careers
 {
     public class CareerKills
     {
-        public int ID { get; set; }
 
         public int monsters { get; set; }
 

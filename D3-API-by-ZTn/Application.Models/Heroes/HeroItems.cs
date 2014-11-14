@@ -8,31 +8,31 @@ namespace Application.Models.Heroes
 {
     public class HeroItems
     {
-        public int ID { get; set; }
-        public Item Head { get; set; }
+        public int Id { get; set; }
+        public virtual Item Head { get; set; }
 
-        public Item Torso { get; set; }
+        public virtual Item Torso { get; set; }
 
-        public Item Feet { get; set; }
+        public virtual Item Feet { get; set; }
 
-        public Item Hands { get; set; }
+        public virtual Item Hands { get; set; }
 
-        public Item Shoulders { get; set; }
+        public virtual Item Shoulders { get; set; }
 
-        public Item Legs { get; set; }
+        public virtual Item Legs { get; set; }
 
-        public Item Bracers { get; set; }
+        public virtual Item Bracers { get; set; }
 
-        public Item MainHand { get; set; }
+        public virtual Item MainHand { get; set; }
 
-        public Item OffHand { get; set; }
+        public virtual Item OffHand { get; set; }
 
-        public Item Waist { get; set; }
+        public virtual Item Waist { get; set; }
 
-        public Item RightFinger { get; set; }
+        public virtual Item RightFinger { get; set; }
 
-        public Item LeftFinger { get; set; }
+        public virtual Item LeftFinger { get; set; }
 
-        public Item Neck { get; set; }
+        public virtual Item Neck { get; set; }
     }
 }

@@ -12,10 +12,14 @@ namespace Application.Models.Heroes
     {
         private ICollection<Skill> activeSkills;
         private ICollection<Skill> passiveSkills;
+        private ICollection<HeroComment> comments;
+        private ICollection<HeroVote> votes;
         public Hero()
         {
             this.activeSkills = new HashSet<Skill>();
             this.passiveSkills = new HashSet<Skill>();
+            this.comments = new HashSet<HeroComment>();
+            this.votes = new HashSet<HeroVote>();
         }
 
         public int ID { get; set; }
@@ -60,6 +64,18 @@ namespace Application.Models.Heroes
         {
             get { return this.passiveSkills; }
             set { this.passiveSkills = value; }
+        }
+
+        public virtual ICollection<HeroComment> Comments
+        {
+            get { return this.comments; }
+            set { this.comments = value; }
+        }
+
+        public virtual ICollection<HeroVote> Votes
+        {
+            get { return this.votes; }
+            set { this.votes = value; }
         }
     }
 }

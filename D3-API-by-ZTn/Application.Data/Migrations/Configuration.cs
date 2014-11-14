@@ -13,7 +13,6 @@ namespace Application.Data.Migrations
 {
     public sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
-        Random rand = new Random();
         public Configuration()
         {
             this.AutomaticMigrationsEnabled = true;
@@ -22,7 +21,6 @@ namespace Application.Data.Migrations
 
         protected override void Seed(ApplicationDbContext context)
         {
-
         }
     }
 }

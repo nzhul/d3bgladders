@@ -7,8 +7,6 @@ namespace Application.Models.Careers
 {
     public class ClassTimePlayed
     {
-        public int ID { get; set; }
-
         public double Barbarian { get; set; }
 
         public double Crusader { get; set; }

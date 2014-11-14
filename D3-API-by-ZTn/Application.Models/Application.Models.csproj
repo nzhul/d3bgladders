@@ -59,12 +59,17 @@
     <Compile Include="Careers\CareerKills.cs" />
     <Compile Include="Careers\CareerProgress.cs" />
     <Compile Include="Careers\ClassTimePlayed.cs" />
+    <Compile Include="Guides\GuideComment.cs" />
+    <Compile Include="Guides\Guide.cs" />
+    <Compile Include="Guides\GuideVote.cs" />
     <Compile Include="Heroes\Hero.cs" />
     <Compile Include="Heroes\HeroClass.cs" />
+    <Compile Include="Heroes\HeroComment.cs" />
     <Compile Include="Heroes\HeroGender.cs" />
     <Compile Include="Heroes\HeroItems.cs" />
     <Compile Include="Heroes\HeroKills.cs" />
     <Compile Include="Heroes\HeroStats.cs" />
+    <Compile Include="Heroes\HeroVote.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skills\Skill.cs" />
