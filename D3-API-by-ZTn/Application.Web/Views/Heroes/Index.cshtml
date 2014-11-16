@@ -1,39 +1,26 @@
-﻿@model IEnumerable<Application.Models.Heroes.Hero>
+﻿<h2>Best Heroes</h2>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Level)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Level)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
-
-</table>
+@(Html.Kendo()
+.Grid<Application.Web.Models.HeroViewModel>()
+.Name("heroes-grid")
+.Pageable()
+.Sortable()
+.Columns(col =>
+{
+    col.Bound(m => m.Name).ClientTemplate(
+    "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+    col.Bound(m => m.BattleTag);
+    col.Bound(m => m.Damage);
+    col.Bound(m => m.Life);
+    col.Bound(m => m.Toughness);
+    col.Bound(m => m.Healing);
+    col.Bound(m => m.HeroClass);
+    col.Bound(m => m.ParagonLevel);
+})
+            .DataSource(data =>
+            {
+                data.Ajax()
+                    .ServerOperation(true)
+                    .Read("ReadAllHeroes", "Heroes")
+                    .PageSize(10);
+            }))

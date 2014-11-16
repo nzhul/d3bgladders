@@ -189,6 +189,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CareerDetailsViewModel.cs" />
+    <Compile Include="Models\HeroDetailsViewModel.cs" />
     <Compile Include="Models\HeroViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\CareerSummaryViewModel.cs" />
@@ -1006,11 +1007,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Heroes\Create.cshtml" />
-    <Content Include="Views\Heroes\Delete.cshtml" />
-    <Content Include="Views\Heroes\Details.cshtml" />
-    <Content Include="Views\Heroes\Edit.cshtml" />
-    <Content Include="Views\Heroes\Index.cshtml" />
     <Content Include="Scripts\KendoUI\jquery.min.map" />
     <Content Include="Scripts\KendoUI\kendo.all.min.js.map" />
     <Content Include="Scripts\KendoUI\kendo.angular.min.js.map" />
@@ -1126,6 +1122,8 @@
     <Content Include="Views\Shared\DisplayTemplates\Int32.cshtml" />
     <Content Include="Views\Players\Index.cshtml" />
     <Content Include="Views\Players\Details.cshtml" />
+    <Content Include="Views\Heroes\Index.cshtml" />
+    <Content Include="Views\Heroes\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

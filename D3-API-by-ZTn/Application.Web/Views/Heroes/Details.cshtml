@@ -1,34 +1,183 @@
 ﻿@model Application.Models.Heroes.Hero
 
-@{
-    ViewBag.Title = "Details";
-}
+<h2>@Model.Name [<small style="color:lightcoral"><a href="/Players/Details/@Model.CareerId">@Model.ApplicationUser.BattleTag</a></small>]</h2>
+<hr />
+<div class="row" style="margin-top: -10px;">
+    <div class="col-md-3">
+        <div class="panel panel-primary" style="width:200px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    @Model.Name [<small style="color:lightgray">@Model.ParagonLevel</small>]
+                </h3>
+            </div>
+            <div class="panel-body">
+                @switch (@Model.HeroClass)
+                {
+                    case Application.Models.Heroes.HeroClass.Unknown:
+                        break;
+                    case Application.Models.Heroes.HeroClass.Barbarian:
+                        <img src="~/Content/img/barbarian-big.jpg" alt="Alternate Text" />
+                        break;
+                    case Application.Models.Heroes.HeroClass.Crusader:
+                    <img src="~/Content/img/crusader-big.jpg" alt="Alternate Text" />
+                        break;
+                    case Application.Models.Heroes.HeroClass.DemonHunter:
+                    <img src="~/Content/img/demon-hunter-big-female.jpg" alt="Alternate Text" />
+                        break;
+                    case Application.Models.Heroes.HeroClass.Monk:
+                    <img src="~/Content/img/monk-big.jpg" alt="Alternate Text" />
+                        break;
+                    case Application.Models.Heroes.HeroClass.WitchDoctor:
+                    <img src="~/Content/img/witch-doctor-big.jpg" alt="Alternate Text" />
+                        break;
+                    case Application.Models.Heroes.HeroClass.Wizard:
+                    <img src="~/Content/img/wizard-big-female.jpg" alt="Alternate Text" />
+                        break;
+                    default:
+                        break;
+                }
+                <br />
+                <br />
+                Damage: <span class="label label-warning pull-right">@Model.Stats.Damage</span><br />
+                Life: <span class="label label-danger pull-right">@Model.Stats.Life</span><br />
+                Healing: <span class="label label-success pull-right">@Model.Stats.Healing</span><br />
+                Toughness: <span class="label label-success pull-right">@Model.Stats.Toughness</span><br />
+            </div>
+        </div>
+        <table style="width: 100%;">
+            <tr>
+                <td>Likes: 123</td>
+                <td><a href="#" class="btn-sm btn-primary" style="margin-left: 10px;">Like</a></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Comments: 8</td>
+                <td><a href="#" class="btn-sm btn-primary" style="margin-left: 10px;">Comment</a></td>
+            </tr>
+        </table>
 
-<h2>Details</h2>
+    </div>
+    <div class="col-md-3" style="margin-left: -60px;">
+        <h4>Additional Statistics:</h4>
+        <h5 style="border-bottom: 1px solid gray; padding-bottom: 10px;color:lightcoral">Primary</h5>
+        Strenght:
+        <span class="label label-success pull-right">@Model.Stats.Strength</span>
+        <br />
+        Dexterity:
+        <span class="label label-success pull-right">@Model.Stats.Dexterity</span>
+        <br />
+        Intelligence:
+        <span class="label label-success pull-right">@Model.Stats.Intelligence</span>
+        <br />
+        Vitality:
+        <span class="label label-success pull-right">@Model.Stats.Vitality</span>
+        <br />
+        <h5 style="border-bottom: 1px solid gray; padding-bottom: 10px;color:lightcoral">Damage</h5>
+        Attack Speed:
+        <span class="label label-danger pull-right">@Model.Stats.AttackSpeed</span>
+        <br />
+        Critical Chance:
+        <span class="label label-danger pull-right">@Model.Stats.CritChance</span>
+        <br />
+        Critical Damage:
+        <span class="label label-danger pull-right">@Model.Stats.CritDamage</span>
+        <br />
+        <h5 style="border-bottom: 1px solid gray; padding-bottom: 10px;color:lightcoral">Defence</h5>
+        Armor:
+        <span class="label label-warning pull-right">@Model.Stats.Armor</span>
+        <br />
+        Cold Resist:
+        <span class="label label-warning pull-right">@Model.Stats.ColdResist</span>
+        <br />
+        Fire Resist:
+        <span class="label label-warning pull-right">@Model.Stats.FireResist</span>
+        <br />
+        Lightning Resist:
+        <span class="label label-warning pull-right">@Model.Stats.LightningResist</span>
+        <br />
+        Poison Resist:
+        <span class="label label-warning pull-right">@Model.Stats.PoisonResist</span>
+        <br />
+        Arcane Resist:
+        <span class="label label-warning pull-right">@Model.Stats.ArcaneResist</span>
+        <br />
+    </div>
+    <div class="col-md-6">
+        <h4>Hero Skills: </h4>
+        <h5 style="border-bottom: 1px solid gray; padding-bottom: 10px;color:lightcoral">Active Skills</h5>
+        @foreach (var skill in @Model.ActiveSkills)
+        {
+            switch (@Model.HeroClass)
+            {
+                case Application.Models.Heroes.HeroClass.Unknown:
+                    break;
+                case Application.Models.Heroes.HeroClass.Barbarian:
+                    <a href="http://eu.battle.net/d3/en/class/barbarian/active/@(skill.Slug)" style="float: left; margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                case Application.Models.Heroes.HeroClass.Crusader:
+                <a href="http://eu.battle.net/d3/en/class/crusader/active/@(skill.Slug)" style="float: left;margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                case Application.Models.Heroes.HeroClass.DemonHunter:
+                <a href="http://eu.battle.net/d3/en/class/demon-hunter/active/@(skill.Slug)" style="float: left;margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                case Application.Models.Heroes.HeroClass.Monk:
+                <a href="http://eu.battle.net/d3/en/class/monk/active/@(skill.Slug)" style="float: left;margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                case Application.Models.Heroes.HeroClass.WitchDoctor:
+                <a href="http://eu.battle.net/d3/en/class/witch-doctor/active/@(skill.Slug)" style="float: left;margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                case Application.Models.Heroes.HeroClass.Wizard:
+                <a href="http://eu.battle.net/d3/en/class/wizard/active/@(skill.Slug)" style="float: left;margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                default:
+                    break;
+            }
+        }
+        <br />
+        <div style="clear:both;"></div>
+        <h5 style="border-bottom: 1px solid gray; padding-bottom: 10px;color:lightcoral">Passive Skills</h5>
+        @foreach (var skill in @Model.PassiveSkills)
+        {
+            switch (@Model.HeroClass)
+            {
+                case Application.Models.Heroes.HeroClass.Unknown:
+                    break;
+                case Application.Models.Heroes.HeroClass.Barbarian:
+                    <a href="http://eu.battle.net/d3/en/class/barbarian/passive/@(skill.Slug)" style="float: left; margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                case Application.Models.Heroes.HeroClass.Crusader:
+                <a href="http://eu.battle.net/d3/en/class/crusader/passive/@(skill.Slug)" style="float: left;margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                case Application.Models.Heroes.HeroClass.DemonHunter:
+                <a href="http://eu.battle.net/d3/en/class/demon-hunter/passive/@(skill.Slug)" style="float: left;margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                case Application.Models.Heroes.HeroClass.Monk:
+                <a href="http://eu.battle.net/d3/en/class/monk/passive/@(skill.Slug)" style="float: left;margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                case Application.Models.Heroes.HeroClass.WitchDoctor:
+                <a href="http://eu.battle.net/d3/en/class/witch-doctor/passive/@(skill.Slug)" style="float: left;margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                case Application.Models.Heroes.HeroClass.Wizard:
+                <a href="http://eu.battle.net/d3/en/class/wizard/passive/@(skill.Slug)" style="float: left;margin-right: 10px;"><img src="http://media.blizzard.com/d3/icons/skills/64/@(skill.Icon).png" /></a>
+                    break;
+                default:
+                    break;
+            }
+        }
 
-<div>
-    <h4>Hero</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Level)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Level)
-        </dd>
-
-    </dl>
+        <div style="clear:both;"></div>
+        <h5 style="border-bottom: 1px solid gray; padding-bottom: 10px;color:lightcoral">Items</h5>
+        <button class="btn btn-primary center-block" style="margin-top: 30px;">Load Items</button>  
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<hr />
+<div class="row" style="margin-top: -20px;">
+    <div class="col-md-12">
+        <h3>Comments:</h3>
+        //TODO Finish the comments
+    </div>
+</div>
+
+<script src="http://us.battle.net/d3/static/js/tooltips.js"></script>

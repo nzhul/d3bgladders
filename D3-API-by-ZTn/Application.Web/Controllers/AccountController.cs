@@ -183,7 +183,7 @@ namespace Application.Web.Controllers
 
                     var createdUser = db.Users.FirstOrDefault(x => x.Email == model.Email);
 
-                    D3Api.ApiKey = "zrxxcy3qzp8jcbgrce2es4yq52ew2k7r";
+                    D3Api.ApiKey = "zrxxcy3qzp8jcbgrce2es4yq52ew2k7r"; //zrxxcy3qzp8jcbgrce2es4yq52ew2k7r // h74mhzdxmzqx3ugbggq955wan3kxfcga
                     var battleTag = new BattleTag(model.BattleTag);
 
                     var careerJS = ZTn.BNet.D3.Careers.Career.CreateFromBattleTag(battleTag);
@@ -223,7 +223,8 @@ namespace Application.Web.Controllers
                     db.Careers.Add(careerDB);
                     db.SaveChanges();
 
-                    for (int i = 0; i < careerJS.Heroes.Count(); i++)
+                    // Populating Heroes
+                    for (int i = 0; i < 4; i++) //careerJS.Heroes.Count()
                     {
                         var heroJS = ZTn.BNet.D3.Heroes.Hero.CreateFromHeroId(battleTag, careerJS.Heroes[i].Id);
                         var heroDBClass = Application.Models.Heroes.HeroClass.Unknown;
@@ -310,6 +311,49 @@ namespace Application.Web.Controllers
                                 Vitality = heroJS.Stats.Vitality
                             }
                         };
+
+                        // Populating Active Skill
+                        for (int j = 0; j < heroJS.Skills.Active.Length; j++)
+                        {
+                            var jsSkill = heroJS.Skills.Active[j].Skill;
+                            if (jsSkill != null)
+                            {
+                                var currentActiveSkill = new Application.Models.Skills.Skill
+                                {
+                                    Description = jsSkill.Description,
+                                    Flavor = jsSkill.Flavor,
+                                    Icon = jsSkill.Icon,
+                                    IsPassive = false,
+                                    Level = jsSkill.Level,
+                                    Name = jsSkill.Name,
+                                    Slug = jsSkill.Slug,
+                                    TooltipUrl = jsSkill.TooltipUrl
+                                };
+                                heroDB.ActiveSkills.Add(currentActiveSkill);
+                            }
+                        }
+
+                        // Populating Passive Skills
+                        for (int k = 0; k < heroJS.Skills.Passive.Length; k++)
+                        {
+                            var jsSkillPassive = heroJS.Skills.Passive[k].Skill;
+                            if (jsSkillPassive != null)
+                            {
+                                var currentPassiveSkill = new Application.Models.Skills.Skill
+                                {
+                                    Description = jsSkillPassive.Description,
+                                    Flavor = jsSkillPassive.Flavor,
+                                    Icon = jsSkillPassive.Icon,
+                                    IsPassive = true,
+                                    Level = jsSkillPassive.Level,
+                                    Name = jsSkillPassive.Name,
+                                    Slug = jsSkillPassive.Slug,
+                                    TooltipUrl = jsSkillPassive.TooltipUrl
+                                };
+                                heroDB.PassiveSkills.Add(currentPassiveSkill);
+                            }
+                        }
+
                         db.Heroes.Add(heroDB);
                     }
                     db.SaveChanges();

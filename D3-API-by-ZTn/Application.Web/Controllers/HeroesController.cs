@@ -1,128 +1,49 @@
-﻿using System;
+﻿using Application.Web.Models;
+using Kendo.Mvc.UI;
+using Kendo.Mvc.Extensions;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Application.Data;
-using Application.Models.Heroes;
 
 namespace Application.Web.Controllers
 {
-    public class HeroesController : Controller
+    public class HeroesController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
         // GET: Heroes
         public ActionResult Index()
-        {
-            return View(db.Heroes.ToList());
-        }
-
-        // GET: Heroes/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Hero hero = db.Heroes.Find(id);
-            if (hero == null)
-            {
-                return HttpNotFound();
-            }
-            return View(hero);
-        }
-
-        // GET: Heroes/Create
-        public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Heroes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Level")] Hero hero)
+        public JsonResult ReadAllHeroes([DataSourceRequest] DataSourceRequest request)
         {
-            if (ModelState.IsValid)
+            var result = this.Data.Heroes.All()
+                .OrderByDescending(x => x.Stats.Damage)
+                .ThenBy(x => x.Stats.Toughness)
+                .Select(x => new HeroViewModel
             {
-                db.Heroes.Add(hero);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                ID = x.ID,
+                BattleTag = x.ApplicationUser.BattleTag,
+                Damage = x.Stats.Damage,
+                Healing = x.Stats.Healing,
+                HeroClass = x.HeroClass,
+                IsHardcore = x.Hardcore,
+                Life = x.Stats.Life,
+                Name = x.Name,
+                ParagonLevel = x.ParagonLevel,
+                Toughness = x.Stats.Toughness
 
-            return View(hero);
+            });
+
+            return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
-        // GET: Heroes/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Hero hero = db.Heroes.Find(id);
-            if (hero == null)
-            {
-                return HttpNotFound();
-            }
-            return View(hero);
-        }
-
-        // POST: Heroes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Level")] Hero hero)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(hero).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(hero);
-        }
-
-        // GET: Heroes/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Hero hero = db.Heroes.Find(id);
-            if (hero == null)
-            {
-                return HttpNotFound();
-            }
-            return View(hero);
-        }
-
-        // POST: Heroes/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Hero hero = db.Heroes.Find(id);
-            db.Heroes.Remove(hero);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+            var viewModel = this.Data.Heroes.Find(id);
+            return View(viewModel);
         }
     }
 }
