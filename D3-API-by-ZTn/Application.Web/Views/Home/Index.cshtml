@@ -7,69 +7,34 @@
     <div class="container well" style="margin-top:10px;background: #374c60;">
         <div class="col-md-6">
             <h1>Diablo III Ladders</h1>
+            <hr />
             <p>
-                Start by entering your battletag on top left and press 'Import Now' on next page.
-                Leaderboards and rankings for Power(Hero Power), Burst DPS and EHP(Toughness) are calculated based off items unbuffed (Burst DPS takes best Elemental% * Elite% * Skill%). Season, paragon, build, clan and legendary leaderboards are also available and up to date DPS and toughness calculators found in every character sheet.
+                Diablo III Ladders is Chart system for Diablo III players. It is simple system - Just register your account in the top right corner and provide valid BattleTag (eg:&nbsp;noob#1234).
+                <br /><br />
+                The System will automaticly fetch the data of your heroes from the <a href="http://blizzard.github.io/d3-api-docs/">official Diablo III API</a> . After that you can view how your hero is placed among other heroes.
+                You can also comment and rate heroes and write guides based on given skillset.
             </p>
         </div>
         <div class="col-md-6">
-            Latest Guides:
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#home" data-toggle="tab" aria-expanded="true">All</a></li>
-                <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Barbarian</a></li>
-                <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Wizard</a></li>
-                <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">DH</a></li>
-                <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Monk</a></li>
-                <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">WD</a></li>
-                <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Crusader</a></li>
-            </ul>
-            <div id="myTabContent" class="tab-content">
-                <div class="tab-pane fade active in" id="home">
-                    <table class="table table-striped table-hover ">
-                        <thead>
-                            <tr>
-                                <th>Class</th>
-                                <th>Column heading</th>
-                                <th>Column heading</th>
-                                <th>Column heading</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="info">
-                                <td>3</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="success">
-                                <td>4</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="danger">
-                                <td>5</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                        </tbody>
-                    </table> 
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Latest Guides
                 </div>
-                <div class="tab-pane fade" id="profile">
-                    place table here
+                <div class="panel-body">
+                    <img src="~/Content/img/barbarian_male.png" alt="Alternate Text" />
+                    <a href="/Guides/Details/1" style="color: white;">Awesome Barbarian build</a>  <div class="pull-right">Rating: <span class="label label-success">123</span> Comments: <span class="label label-success">6</span></div><br />
+                    <br />
+                    <img src="~/Content/img/barbarian_male.png" alt="Alternate Text" />
+                    <a href="/Guides/Details/1" style="color: white;">Awesome Barbarian build</a>  <div class="pull-right">Rating: <span class="label label-success">123</span> Comments: <span class="label label-success">6</span></div><br />
+                    <br />
+                    <img src="~/Content/img/barbarian_male.png" alt="Alternate Text" />
+                    <a href="/Guides/Details/1" style="color: white;">Awesome Barbarian build</a>  <div class="pull-right">Rating: <span class="label label-success">123</span> Comments: <span class="label label-success">6</span></div><br />
+                    <br />
+                    <img src="~/Content/img/barbarian_male.png" alt="Alternate Text" />
+                    <a href="/Guides/Details/1" style="color: white;">Awesome Barbarian build</a>  <div class="pull-right">Rating: <span class="label label-success">123</span> Comments: <span class="label label-success">6</span></div><br />
+                    <br />
+                    <img src="~/Content/img/barbarian_male.png" alt="Alternate Text" />
+                    <a href="/Guides/Details/1" style="color: white;">Awesome Barbarian build</a>  <div class="pull-right">Rating: <span class="label label-success">123</span> Comments: <span class="label label-success">6</span></div><br />
                 </div>
             </div>
         </div>
@@ -78,45 +43,38 @@
         <div class="col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Most Powerfull Heroes</h3>
+                    <h3 class="panel-title">Most Powerfull Heroes: Softcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (int i = 0; i < Model.Count(); i++)
-                            {
-                                var hero = Model.ElementAt(i);
-                                <tr>
-                                    <td>@hero.ID</td>
-                                    <td>@hero.BattleTag</td>
-                                    <td>@hero.Name</td>
-                                    <td>@hero.ParagonLevel</td>
-                                    <td>@hero.HeroClass</td>
-                                    <td>@hero.Damage</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-softcore")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroes", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
         <div class="col-md-6">
@@ -125,70 +83,35 @@
                     <h3 class="panel-title">Most Powerfull Heroes: Hardcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-hardcore")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesHardcore", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
     </div>
@@ -196,145 +119,75 @@
         <div class="col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">TOP BARBARIANS</h3>
+                    <h3 class="panel-title">TOP Barbarians: Softcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-barbarians")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesBarbarian", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
         <div class="col-md-6">
             <div class="panel panel-danger">
                 <div class="panel-heading">
-                    <h3 class="panel-title">TOP BARBARIANS: Hardcore</h3>
+                    <h3 class="panel-title">TOP Babarians: Hardcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-barbarians-hardcore")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesBarbarianHardcore", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
     </div>
@@ -343,145 +196,75 @@
         <div class="col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">TOP Wizzards</h3>
+                    <h3 class="panel-title">TOP Wizards: Softcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-wizards")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesWizard", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
         <div class="col-md-6">
             <div class="panel panel-danger">
                 <div class="panel-heading">
-                    <h3 class="panel-title">TOP Wizzards: Hardcore</h3>
+                    <h3 class="panel-title">TOP Wizards: Hardcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-wizards-hardcore")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesWizardHardcore", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
     </div>
@@ -490,73 +273,38 @@
         <div class="col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">TOP Demon Hunters</h3>
+                    <h3 class="panel-title">TOP Demon Hunters: Softcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-demon-hunter")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesDemonHunter", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
         <div class="col-md-6">
@@ -565,70 +313,35 @@
                     <h3 class="panel-title">TOP Demon Hunters: Hardcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-demon-hunter-hardcore")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesDemonHunterHardcore", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
     </div>
@@ -640,70 +353,35 @@
                     <h3 class="panel-title">TOP Monks</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-monk")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesMonk", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
         <div class="col-md-6">
@@ -712,70 +390,35 @@
                     <h3 class="panel-title">TOP Monks: Hardcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-monk-hardcore")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesMonkHardcore", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
     </div>
@@ -787,70 +430,35 @@
                     <h3 class="panel-title">TOP Witch Doctors</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-witch-doctor")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesWitchDoctor", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
         <div class="col-md-6">
@@ -859,70 +467,35 @@
                     <h3 class="panel-title">TOP Witch Doctors: Hardcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-witch-doctor-hardcore")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesWitchDoctorHardcore", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
     </div>
@@ -933,70 +506,35 @@
                     <h3 class="panel-title">TOP Crusaders</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-crusader")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesCrusader", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
         <div class="col-md-6">
@@ -1005,70 +543,35 @@
                     <h3 class="panel-title">TOP Crusaders: Hardcore</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover " style="border-bottom: 1px solid gray;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Battle Tag</th>
-                                <th>Hero</th>
-                                <th>Paragon</th>
-                                <th>Class</th>
-                                <th>Power</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>nzhul#2124</td>
-                                <td>Vanguard</td>
-                                <td>682</td>
-                                <td>Barbarian</td>
-                                <td>11 234</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @(Html.Kendo()
+                    .Grid<Application.Web.Models.HeroViewModel>()
+                    .Name("heroes-grid-crusader-hardcore")
+                    .Pageable()
+                    .Sortable()
+                    .Columns(col =>
+                    {
+                        col.Bound(m => m.Name).ClientTemplate(
+                        "<a href='" + Url.Action("Details", "Heroes") + "/#= ID #'" + ">#= Name #</a>");
+                        col.Bound(m => m.BattleTag);
+                        col.Bound(m => m.Damage);
+                        col.Bound(m => m.Life);
+                        col.Bound(m => m.HeroClass);
+                        col.Bound(m => m.ParagonLevel);
+                    })
+                                .DataSource(data =>
+                                {
+                                    data.Ajax()
+                                        .ServerOperation(true)
+                                        .Read("ReadAllHeroesCrusaderHardcore", "Heroes")
+                                        .PageSize(6)
+                                        .Sort(sort =>
+                                        {
+                                            sort.Add(hero => hero.ParagonLevel).Descending();
+                                            sort.Add(hero => hero.Damage);
+                                            sort.Add(hero => hero.Toughness);
+                                        });
+                                }))
                 </div>
-                <ul class="pagination pagination-sm" style="margin: -20px 0 10px 0px;">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
             </div>
         </div>
     </div>

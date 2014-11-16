@@ -44,10 +44,21 @@
                 Toughness: <span class="label label-success pull-right">@Model.Stats.Toughness</span><br />
             </div>
         </div>
+        
         <table style="width: 100%;">
             <tr>
-                <td>Likes: @Model.Votes.Count()</td>
-                <td><a href="#" class="btn-sm btn-primary" style="margin-left: 10px;">Like</a></td>
+                <td>Likes: <span id="hero-votes">@Model.Votes.Count()</span></td>
+                
+                <td>@if (User.Identity.IsAuthenticated && @ViewBag.CanVote)
+                {
+                    @Ajax.ActionLink("Like", "Vote", new { id = Model.ID }, new AjaxOptions
+                   {
+                       InsertionMode = InsertionMode.Replace,
+                       UpdateTargetId = "hero-votes",
+                       HttpMethod = "Post",
+                       OnSuccess = "hideVoteButton"
+                   }, new { @id = "vote-button", @class = "btn-sm btn-primary", @style="margin-left: 10px;" })
+                }</td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
