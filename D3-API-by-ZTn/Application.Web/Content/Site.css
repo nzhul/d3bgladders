@@ -26,3 +26,56 @@ textarea {
 .progressbar {
     margin-top: 10px;
 }
+
+.k-grid-header{
+    background-color: gray;
+}
+
+.k-alt {
+    background-color: #596877;
+}
+
+.k-icon.k-i-arrow-w {
+    background: url(../Content/img/left-arrow.png);
+    position: relative;
+    top: -2px;
+}
+.k-icon.k-i-seek-w {
+    background: url(../Content/img/left-arrow-forward.png);
+    position: relative;
+    top: -2px;
+}
+
+.k-icon.k-i-arrow-e {
+    background: url(../Content/img/right-arrow.png);
+    position: relative;
+    top: -2px;
+}
+
+.k-icon.k-i-seek-e {
+    background: url(../Content/img/right-arrow-forward.png);
+    position: relative;
+    top: -2px;
+}
+
+.barbarian-splash {
+    background: url(../Content/img/barbarian-splash.png) 95px 0px no-repeat;
+}
+.wizard-splash {
+    background: url(../Content/img/wizard-splash.png) 160px 0px no-repeat;
+}
+.dh-splash {
+    background: url(../Content/img/dh-splash.png) 92px 0px no-repeat;
+}
+.wd-splash {
+    background: url(../Content/img/wd-splash.png) 95px 0px no-repeat;
+}
+.monk-splash {
+    background: url(../Content/img/monk-splash.png) 120px 0px no-repeat;
+}
+.crusader-splash {
+    background: url(../Content/img/crusader-splash.png) 95px 0px no-repeat;
+}
+.all-heroes-splash {
+    background: url(../Content/img/all-heroes-splash.png) 122px 0px no-repeat;
+}

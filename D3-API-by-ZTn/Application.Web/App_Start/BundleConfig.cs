@@ -23,9 +23,12 @@ namespace Application.Web
               "~/Content/bootstrap.superhero.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/kendo").Include(
-                "~/Content/KendoUI/kendo.common.min.css",
-                "~/Content/KendoUI/kendo.common-bootstrap.min.css",
-                "~/Content/KendoUI/kendo.black.min.css"));
+                "~/Content/KendoUI/kendo.common.min.css"));
+
+            //bundles.Add(new StyleBundle("~/Content/kendo").Include(
+            //    "~/Content/KendoUI/kendo.common.min.css",
+            //    "~/Content/KendoUI/kendo.common-bootstrap.min.css",
+            //    "~/Content/KendoUI/kendo.black.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/custom").Include("~/Content/site.css"));
         }
