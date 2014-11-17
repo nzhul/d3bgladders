@@ -176,6 +176,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HeroCommentsController.cs" />
@@ -207,12 +208,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.superhero.css" />
     <Content Include="Content\bootstrap.superhero.min.css" />
+    <Content Include="Content\img\all-heroes-splash.png" />
     <Content Include="Content\img\barbarian-big-female.jpg" />
     <Content Include="Content\img\barbarian-big.jpg" />
+    <Content Include="Content\img\barbarian-splash.png" />
     <Content Include="Content\img\barbarian_female.png" />
     <Content Include="Content\img\barbarian_male.png" />
     <Content Include="Content\img\crusader-big-female.jpg" />
     <Content Include="Content\img\crusader-big.jpg" />
+    <Content Include="Content\img\crusader-splash.png" />
     <Content Include="Content\img\crusader_female.png" />
     <Content Include="Content\img\crusader_male.png" />
     <Content Include="Content\img\demon-hunter-big-female.jpg" />
@@ -220,20 +224,28 @@
     <Content Include="Content\img\demonhunter_female.png" />
     <Content Include="Content\img\demonhunter_male.png" />
     <Content Include="Content\img\design.jpg" />
+    <Content Include="Content\img\dh-splash.png" />
     <Content Include="Content\img\hero-nav-portraits.jpg" />
+    <Content Include="Content\img\left-arrow-forward.png" />
+    <Content Include="Content\img\left-arrow.png" />
     <Content Include="Content\img\monk-big-female.jpg" />
     <Content Include="Content\img\monk-big.jpg" />
+    <Content Include="Content\img\monk-splash.png" />
     <Content Include="Content\img\monk_female.png" />
     <Content Include="Content\img\monk_male.png" />
     <Content Include="Content\img\monster-kills-elite.png" />
     <Content Include="Content\img\monster-kills-hardcore.png" />
     <Content Include="Content\img\monster-kills.png" />
+    <Content Include="Content\img\right-arrow-forward.png" />
+    <Content Include="Content\img\right-arrow.png" />
+    <Content Include="Content\img\wd-splash.png" />
     <Content Include="Content\img\witch-doctor-big-female.jpg" />
     <Content Include="Content\img\witch-doctor-big.jpg" />
     <Content Include="Content\img\witchdoctor_female.png" />
     <Content Include="Content\img\witchdoctor_male.png" />
     <Content Include="Content\img\wizard-big-female.jpg" />
     <Content Include="Content\img\wizard-big.jpg" />
+    <Content Include="Content\img\wizard-splash.png" />
     <Content Include="Content\img\wizard_female.png" />
     <Content Include="Content\img\wizard_male.png" />
     <Content Include="Content\KendoUI\Black\editor.png" />
@@ -1129,6 +1141,7 @@
     <Content Include="Views\Heroes\Details.cshtml" />
     <Content Include="Views\Shared\_CommentPartial.cshtml" />
     <Content Include="Views\HeroComments\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
