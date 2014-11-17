@@ -10,5 +10,8 @@ namespace Application.Web.Models
         public int Id { get; set; }
         public string AuthorUserName { get; set; }
         public string Content { get; set; }
+
+        public int HeroId { get; set; }
+        public string HeroName { get; set; }
     }
 }

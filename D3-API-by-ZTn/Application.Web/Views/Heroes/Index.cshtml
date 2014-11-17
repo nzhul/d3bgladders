@@ -22,5 +22,11 @@
                 data.Ajax()
                     .ServerOperation(true)
                     .Read("ReadAllHeroes", "Heroes")
-                    .PageSize(10);
+                    .PageSize(10)
+                    .Sort(sort =>
+                    {
+                        sort.Add(hero => hero.ParagonLevel).Descending();
+                        sort.Add(hero => hero.Damage);
+                        sort.Add(hero => hero.Toughness);
+                    });
             }))

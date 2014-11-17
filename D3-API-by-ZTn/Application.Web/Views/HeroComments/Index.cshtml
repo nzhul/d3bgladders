@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Hero Comments";
+}
+
+<h2>@ViewBag.Title Administration</h2>
+
+@(Html.Kendo()
+.Grid<Application.Web.Models.CommentViewModel>()
+.Name("comments-grid")
+.Pageable()
+.Sortable()
+.Editable(edit =>
+    {
+        edit.Mode(GridEditMode.InLine);
+    })
+.Columns(col =>
+{
+    col.Bound(m => m.HeroName).ClientTemplate(
+        "<a href='" + Url.Action("Details", "Heroes") + "/#= HeroId #'" + ">#= HeroName #</a>");
+    col.Bound(m => m.Content);
+    col.Bound(m => m.AuthorUserName);
+    col.Command(com =>
+        {
+            com.Edit();
+            com.Destroy();
+        }).Title("Commands");
+})
+.DataSource(data =>
+{
+    data.Ajax()
+        .ServerOperation(true)
+        .Model(m =>
+        {
+            m.Id("Id");
+            m.Field(com => com.AuthorUserName).Editable(false);
+            m.Field(com => com.HeroName).Editable(false);
+        })
+        .Read("ReadAllComments", "HeroComments")
+        .Create("CreateComment", "HeroComments")
+        .Update("UpdateComment", "HeroComments")
+        .Destroy("DestroyComment", "HeroComments")
+        .PageSize(5)
+        .Sort(sort =>
+        {
+            sort.Add(com => com.Id).Descending();
+        }); 
+}))

@@ -28,5 +28,6 @@ namespace Application.Data
 
         public IDbSet<Career> Careers { get; set; }
         public IDbSet<Hero> Heroes { get; set; }
+
     }
 }
