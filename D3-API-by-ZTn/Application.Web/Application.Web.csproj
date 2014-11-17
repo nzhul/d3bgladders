@@ -179,6 +179,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\GuidesController.cs" />
     <Compile Include="Controllers\HeroCommentsController.cs" />
     <Compile Include="Controllers\HeroesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1142,6 +1143,8 @@
     <Content Include="Views\Shared\_CommentPartial.cshtml" />
     <Content Include="Views\HeroComments\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Guides\Index.cshtml" />
+    <Content Include="Views\Guides\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
