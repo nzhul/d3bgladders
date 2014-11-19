@@ -18,7 +18,8 @@ namespace Application.Web.Controllers
         {
             return View();
         }
-
+        
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroes([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -42,6 +43,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesHardcore([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -65,6 +67,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesBarbarian([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -88,6 +91,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesBarbarianHardcore([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -111,6 +115,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesWizard([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -134,6 +139,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesWizardHardcore([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -157,6 +163,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesDemonHunter([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -180,6 +187,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesDemonHunterHardcore([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -203,6 +211,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesMonk([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -226,6 +235,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesMonkHardcore([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -249,6 +259,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesWitchDoctor([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -272,6 +283,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesWitchDoctorHardcore([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -294,6 +306,8 @@ namespace Application.Web.Controllers
 
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
+
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesCrusader([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()
@@ -317,6 +331,7 @@ namespace Application.Web.Controllers
             return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        //[OutputCache(Duration = 60 * 60)]
         public JsonResult ReadAllHeroesCrusaderHardcore([DataSourceRequest] DataSourceRequest request)
         {
             var result = this.Data.Heroes.All()

@@ -23,5 +23,9 @@
                 data.Ajax()
                     .ServerOperation(true)
                     .Read("ReadAllCareers", "Players")
-                    .PageSize(10);
+                    .PageSize(10)
+                    .Sort(sort =>
+                    {
+                        sort.Add(player => player.ParagonLevel).Descending();
+                    });
             }))
